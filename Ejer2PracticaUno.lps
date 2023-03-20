@@ -6,10 +6,11 @@
     <BuildModes Active="Default"/>
     <Units>
       <Unit>
-        <Filename Value="Ejer1PracticaUno.lpr"/>
+        <Filename Value="Ejer2PracticaUno.lpr"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <CursorPos X="32" Y="20"/>
+        <TopLine Value="7"/>
+        <CursorPos X="42" Y="21"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit>

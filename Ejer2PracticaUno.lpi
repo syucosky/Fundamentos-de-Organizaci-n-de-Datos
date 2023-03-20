@@ -10,7 +10,7 @@
         <MainUnitHasScaledStatement Value="False"/>
       </Flags>
       <SessionStorage Value="InProjectDir"/>
-      <Title Value="Ejer1PracticaUno"/>
+      <Title Value="Ejer2PracticaUno"/>
       <UseAppBundle Value="False"/>
       <ResourceType Value="res"/>
     </General>
@@ -26,7 +26,7 @@
     </RunParams>
     <Units>
       <Unit>
-        <Filename Value="Ejer1PracticaUno.lpr"/>
+        <Filename Value="Ejer2PracticaUno.lpr"/>
         <IsPartOfProject Value="True"/>
       </Unit>
     </Units>
@@ -35,7 +35,7 @@
     <Version Value="11"/>
     <PathDelim Value="\"/>
     <Target>
-      <Filename Value="Ejer1PracticaUno"/>
+      <Filename Value="Ejer2PracticaUno"/>
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
