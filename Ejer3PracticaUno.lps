@@ -6,21 +6,17 @@
     <BuildModes Active="Default"/>
     <Units>
       <Unit>
-        <Filename Value="Ejer2PracticaUno.lpr"/>
+        <Filename Value="Ejer3PracticaUno.lpr"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="3"/>
-        <CursorPos X="95" Y="17"/>
-        <UsageCount Value="21"/>
+        <TopLine Value="124"/>
+        <CursorPos X="28" Y="142"/>
+        <FoldState Value=" TCDH6 T3ig0HK"/>
+        <UsageCount Value="22"/>
         <Loaded Value="True"/>
       </Unit>
     </Units>
-    <JumpHistory>
-      <Position>
-        <Filename Value="Ejer2PracticaUno.lpr"/>
-        <Caret Line="17" Column="99" TopLine="7"/>
-      </Position>
-    </JumpHistory>
+    <JumpHistory HistoryIndex="-1"/>
     <RunParams>
       <FormatVersion Value="2"/>
       <Modes ActiveMode=""/>

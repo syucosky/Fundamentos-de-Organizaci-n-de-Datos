@@ -14,7 +14,7 @@ var
 begin
   Writeln('Ingresar nombre de archivo');
   readln(nombre);
-  assign(arch_enteros,'C:\Users\Usuario\Desktop\seba\Fundamentos de Organizacion de Datos\' + nombre );
+  assign(arch_enteros,'C:\Users\Usuario\Desktop\seba\Fundamentos de Organizacion de Datos\',nombre );
   reset(arch_enteros);
   totalMenor:= 0;
   total:= 0;
