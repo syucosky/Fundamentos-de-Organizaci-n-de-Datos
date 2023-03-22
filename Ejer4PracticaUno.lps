@@ -9,14 +9,14 @@
         <Filename Value="Ejer4PracticaUno.lpr"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="138"/>
-        <CursorPos X="5" Y="159"/>
+        <TopLine Value="195"/>
+        <CursorPos X="26" Y="210"/>
         <FoldState Value=" TCCH6 T3K0E411 Picj70R"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="25"/>
         <Loaded Value="True"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="11">
+    <JumpHistory HistoryIndex="13">
       <Position>
         <Filename Value="Ejer4PracticaUno.lpr"/>
         <Caret Line="137" TopLine="46"/>
@@ -64,6 +64,14 @@
       <Position>
         <Filename Value="Ejer4PracticaUno.lpr"/>
         <Caret Line="210" Column="41" TopLine="194"/>
+      </Position>
+      <Position>
+        <Filename Value="Ejer4PracticaUno.lpr"/>
+        <Caret Line="140" Column="33" TopLine="106"/>
+      </Position>
+      <Position>
+        <Filename Value="Ejer4PracticaUno.lpr"/>
+        <Caret Line="210" Column="27" TopLine="195"/>
       </Position>
     </JumpHistory>
     <RunParams>

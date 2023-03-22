@@ -137,7 +137,7 @@ var
 begin
   seek(archEmpleados,0);
   read(archEmpleados,reg);
-  for i:= 0 to fileSize(archEmpleados)do begin
+  while (not eof(archEmpleados))do begin
       if(reg.numEmpleado = numEmp)then begin
           writeln('a',pos);
           pos:= filePos(archEmpleados);

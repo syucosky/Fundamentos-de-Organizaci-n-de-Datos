@@ -137,7 +137,7 @@ var
 begin
   seek(archEmpleados,0);
   read(archEmpleados,reg);
-  for i:= 0 to fileSize(archEmpleados)do begin
+  while (not eof(archEmpleados))do begin
       if(reg.numEmpleado = numEmp)then begin
           writeln('a',pos);
           pos:= filePos(archEmpleados);
@@ -146,7 +146,7 @@ begin
   end;
 end;
 
-procedure modificarEmpleado(var archEmpleados:arch_registro);
+procedure modificaEmpleado(var archEmpleados:arch_registro);
 var
   regReal:regEmpleados;
   numEmp,pos:integer;
@@ -157,10 +157,10 @@ Begin
   if(encontre(archEmpleados,numEmp))then begin
     buscarPos(archEmpleados,numEmp,pos);
     writeln(pos);
-    seek(archEmpleados,pos);
-    write('Edad a modificar: ');
-    readln(regReal.edad);
-    write(archEmpleados,regReal);
+    //seek(archEmpleados,pos);
+    //write('Edad a modificar: ');
+    //readln(regReal.edad);
+    //write(archEmpleados,regReal);
   end;
 end;
 
@@ -207,7 +207,7 @@ begin
       if(opcion = 4)then
         agregarEmpleado(archEmpleados);
       if(opcion = 5)then
-        modificarEmpleado(archEmpleados);
+        modificarEmpleados(archEmpleados);
       close(archEmpleados);
       writeln('Desea 1: Buscar por Nombre o Apellido');
       writeln('Desea 2: Listar todos los empleados');
