@@ -157,10 +157,10 @@ Begin
   if(encontre(archEmpleados,numEmp))then begin
     buscarPos(archEmpleados,numEmp,pos);
     writeln(pos);
-    //seek(archEmpleados,pos);
-    //write('Edad a modificar: ');
-    //readln(regReal.edad);
-    //write(archEmpleados,regReal);
+    seek(archEmpleados,pos);
+    write('Edad a modificar: ');
+    readln(regReal.edad);
+    write(archEmpleados,regReal);
   end;
 end;
 
