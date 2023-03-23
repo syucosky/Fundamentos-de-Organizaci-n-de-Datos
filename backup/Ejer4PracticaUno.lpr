@@ -103,6 +103,7 @@ end;
 function encontre(var archEmpleados:arch_registro; numEmp:integer):boolean;
 var
   reg:regEmpleados;
+<<<<<<< HEAD
 Begin
   while (not eof(archEmpleados))do begin
       read(archEmpleados,reg);
@@ -110,6 +111,18 @@ Begin
       if(reg.numEmpleado = numEmp)then
           encontre:= true;
   end;
+=======
+  ok: boolean;
+Begin
+  ok:= false;
+  reset(archEmpleados);
+  while (not eof(archEmpleados) and (not ok))do begin
+      read(archEmpleados,reg);
+      if(reg.numEmpleado = numEmp)then
+          ok:= true;
+  end;
+  encontre:= ok;
+>>>>>>> adac5fe5e2e6e59aa1a162de9051dbe1bb701787
 end;
 procedure agregarEmpleado(var archEmpleados:arch_registro);
 var
@@ -126,10 +139,15 @@ Begin
       readln(reg.dni);
       Write('Apellido: ');
       readln(reg.apellido);
+<<<<<<< HEAD
+=======
+      reset(archEmpleados);
+>>>>>>> adac5fe5e2e6e59aa1a162de9051dbe1bb701787
       Seek(archEmpleados,FileSize(archEmpleados));
       write(archEmpleados,reg);
   end;
 end;
+<<<<<<< HEAD
 procedure buscarPos(var archEmpleados:arch_registro; numEmp:integer;var pos:integer);
 var
   reg:regEmpleados;
@@ -162,6 +180,50 @@ Begin
     //readln(regReal.edad);
     //write(archEmpleados,regReal);
   end;
+=======
+{function buscarPos(var archEmpleados:arch_registro; numEmp:integer):integer;
+var
+  reg:regEmpleados;
+Begin
+  reset(archEmpleados);
+  while (not eof(archEmpleados))do begin
+      read(archEmpleados,reg);
+      if(reg.numEmpleado = numEmp)then
+          buscarPos:= filePos(archEmpleados);
+  end;
+end;}
+procedure modificarEmpleado(var archEmpleados:arch_registro);
+var
+  reg,regAux:regEmpleados;
+  numEmp,edad:integer;
+  ok:boolean;
+Begin
+   writeln('Numero de empleado a modificar');
+   readln(numEmp);
+   ok:=false;
+       while(not eof(archEmpleados))do begin
+           read(archEmpleados,reg);
+           if(reg.numEmpleado = numEmp)then begin
+               ok:=true;
+               write('Edad a modificar: ');
+               readln(edad);
+               regAux.nombre:= reg.nombre;
+               regAux.edad:= reg.edad;
+               reg.edad:= edad;
+               seek(archEmpleados,filePos(archEmpleados)-1);
+               write(archEmpleados,reg);
+           end;
+       end;
+       if(not ok)then begin
+           writeln();
+           writeln('Numero de empleado no encontrado');
+           writeln();
+       end
+       else
+           writeln();
+           writeln('La edad de ', regAux.nombre ,' a sido actualizada de: ', regAux.edad ,' a : ', edad);
+           writeln();
+>>>>>>> adac5fe5e2e6e59aa1a162de9051dbe1bb701787
 end;
 
 var
@@ -183,11 +245,19 @@ begin
   writeln('Desea 2: Listar todos los empleados');
   writeln('Desea 3: Listar mayores de 70 años');
   writeln('Desea 4: Agregar Nuevo Empleado');
+<<<<<<< HEAD
   writeln('Desea 5: Modificar Empelado');
   writeln('Desea 6: Salir');
   readln(opcion);
   while(opcion <> 6) do begin
       assign(archEmpleados,'C:\Users\Usuario\Desktop\seba\Fundamentos de Organizacion de Datos\regEmpleados');
+=======
+  writeln('Desea 5: Modificar Empleado');
+  writeln('Desea 6: Salir');
+  readln(opcion);
+  while(opcion <> 6) do begin
+      assign(archEmpleados,'C:\Users\syuco\Desktop\FoD\Practicas\Fundamentos-de-Organizaci-n-de-Datos\regEmpleados');
+>>>>>>> adac5fe5e2e6e59aa1a162de9051dbe1bb701787
       reset(archEmpleados);
       if(opcion = 1)then begin
         writeln('Nombre a buscar: ');
@@ -207,16 +277,29 @@ begin
       if(opcion = 4)then
         agregarEmpleado(archEmpleados);
       if(opcion = 5)then
+<<<<<<< HEAD
         modificarEmpleados(archEmpleados);
+=======
+        modificarEmpleado(archEmpleados);
+>>>>>>> adac5fe5e2e6e59aa1a162de9051dbe1bb701787
       close(archEmpleados);
       writeln('Desea 1: Buscar por Nombre o Apellido');
       writeln('Desea 2: Listar todos los empleados');
       writeln('Desea 3: Listar mayores de 70 años');
       writeln('Desea 4: Agregar Nuevo Empleado');
+<<<<<<< HEAD
       writeln('Desea 5: Modificar Empelado');
+=======
+      writeln('Desea 5: Modificar Empleado');
+>>>>>>> adac5fe5e2e6e59aa1a162de9051dbe1bb701787
       writeln('Desea 6: Salir');
       readln(opcion);
   end;
   writeln('FIN');
   readln;
 end.
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> adac5fe5e2e6e59aa1a162de9051dbe1bb701787
