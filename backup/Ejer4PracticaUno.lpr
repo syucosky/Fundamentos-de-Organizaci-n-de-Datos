@@ -174,7 +174,7 @@ Begin
        end
        else
            writeln();
-           writeln('La edad de ', regAux.nombre ,' a sido actualizada de ', regAux.edad ,' a ', edad);
+           writeln('La edad de ', regAux.nombre ,' a sido actualizada de: ', regAux.edad ,' a : ', edad);
            writeln();
 end;
 
