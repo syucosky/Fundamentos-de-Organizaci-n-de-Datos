@@ -103,16 +103,13 @@ end;
 function encontre(var archEmpleados:arch_registro; numEmp:integer):boolean;
 var
   reg:regEmpleados;
-  ok: boolean;
 Begin
-  ok:= false;
-  reset(archEmpleados);
-  while (not eof(archEmpleados) and (not ok))do begin
+  while (not eof(archEmpleados))do begin
       read(archEmpleados,reg);
+      writeln(reg.numEmpleado);
       if(reg.numEmpleado = numEmp)then
-          ok:= true;
+          encontre:= true;
   end;
-  encontre:= ok;
 end;
 procedure agregarEmpleado(var archEmpleados:arch_registro);
 var
@@ -129,11 +126,11 @@ Begin
       readln(reg.dni);
       Write('Apellido: ');
       readln(reg.apellido);
-      reset(archEmpleados);
       Seek(archEmpleados,FileSize(archEmpleados));
       write(archEmpleados,reg);
   end;
 end;
+<<<<<<< HEAD
 {function buscarPos(var archEmpleados:arch_registro; numEmp:integer):integer;
 var
   reg:regEmpleados;
@@ -174,8 +171,42 @@ Begin
        end
        else
            writeln();
-           writeln('La edad de ', regAux.nombre ,' a sido actualizada de: ', regAux.edad ,' a : ', edad);
+           writeln('La edad de ', regAux.nombre ,' a sido actualizada de ', regAux.edad ,' a ', edad);
            writeln();
+=======
+procedure buscarPos(var archEmpleados:arch_registro; numEmp:integer;var pos:integer);
+var
+  reg:regEmpleados;
+  i:integer;
+begin
+  seek(archEmpleados,0);
+  read(archEmpleados,reg);
+  while (not eof(archEmpleados))do begin
+      if(reg.numEmpleado = numEmp)then begin
+          writeln('a',pos);
+          pos:= filePos(archEmpleados);
+          writeln('b',pos);
+      end;
+  end;
+end;
+
+procedure modificarEmpleado(var archEmpleados:arch_registro);
+var
+  regReal:regEmpleados;
+  numEmp,pos:integer;
+Begin
+  pos:= 0;
+  writeln('Numero de empleado a modificar');
+  readln(numEmp);;
+  if(encontre(archEmpleados,numEmp))then begin
+    buscarPos(archEmpleados,numEmp,pos);
+    writeln(pos);
+    //seek(archEmpleados,pos);
+    //write('Edad a modificar: ');
+    //readln(regReal.edad);
+    //write(archEmpleados,regReal);
+  end;
+>>>>>>> 029e7610b6d362b3b9beb8ca9ef1b71ad7de97ff
 end;
 
 var
@@ -197,11 +228,19 @@ begin
   writeln('Desea 2: Listar todos los empleados');
   writeln('Desea 3: Listar mayores de 70 años');
   writeln('Desea 4: Agregar Nuevo Empleado');
+<<<<<<< HEAD
   writeln('Desea 5: Modificar Empleado');
   writeln('Desea 6: Salir');
   readln(opcion);
   while(opcion <> 6) do begin
       assign(archEmpleados,'C:\Users\syuco\Desktop\FoD\Practicas\Fundamentos-de-Organizaci-n-de-Datos\regEmpleados');
+=======
+  writeln('Desea 5: Modificar Empelado');
+  writeln('Desea 6: Salir');
+  readln(opcion);
+  while(opcion <> 6) do begin
+      assign(archEmpleados,'C:\Users\Usuario\Desktop\seba\Fundamentos de Organizacion de Datos\regEmpleados');
+>>>>>>> 029e7610b6d362b3b9beb8ca9ef1b71ad7de97ff
       reset(archEmpleados);
       if(opcion = 1)then begin
         writeln('Nombre a buscar: ');
@@ -227,12 +266,14 @@ begin
       writeln('Desea 2: Listar todos los empleados');
       writeln('Desea 3: Listar mayores de 70 años');
       writeln('Desea 4: Agregar Nuevo Empleado');
+<<<<<<< HEAD
       writeln('Desea 5: Modificar Empleado');
+=======
+      writeln('Desea 5: Modificar Empelado');
+>>>>>>> 029e7610b6d362b3b9beb8ca9ef1b71ad7de97ff
       writeln('Desea 6: Salir');
       readln(opcion);
   end;
   writeln('FIN');
   readln;
 end.
-
-
