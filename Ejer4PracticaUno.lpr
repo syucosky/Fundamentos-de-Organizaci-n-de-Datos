@@ -177,9 +177,29 @@ Begin
            writeln('La edad de ', regAux.nombre ,' a sido actualizada de ', regAux.edad ,' a ', edad);
            writeln();
 end;
-
+procedure exportar(var archEmpleados:arch_registro; var todosEmpleados:arch_registro);
 var
-  archEmpleados:arch_registro;
+  reg:regEmpleados;
+Begin
+  while(not eof(archEmpleados)) do begin
+       read(archEmpleados,reg);
+       write(todosEmpleados,reg);
+  end;
+  close(todosEmpleados);
+end;
+procedure exportarSinDni(var archEmpleados:arch_registro; var empSinDni:arch_registro);
+var
+  reg:regEmpleados;
+Begin
+  while(not eof(archEmpleados)) do begin
+       read(archEmpleados,reg);
+       if(reg.dni = 00)then
+          write(empSinDni,reg);
+  end;
+  close(empSinDni);
+end;
+var
+  archEmpleados,todosEmpleados,empSinDni:arch_registro;
   nombreArch,apellido,nombre:String[12];
   opcion:integer;
 begin
@@ -198,10 +218,17 @@ begin
   writeln('Desea 3: Listar mayores de 70 años');
   writeln('Desea 4: Agregar Nuevo Empleado');
   writeln('Desea 5: Modificar Empleado');
-  writeln('Desea 6: Salir');
+  writeln('Desea 6: Exportar archivo');
+  writeln('Desea 7: Exportar empleados sin dni');
+  writeln('Desea 8: Salir');
   readln(opcion);
+<<<<<<< HEAD
   while(opcion <> 6) do begin
       assign(archEmpleados,'C:\Users\syuco\Desktop\FoD\Practicas\Fundamentos-de-Organizaci-n-de-Datos\regEmpleados');
+=======
+  while(opcion <> 8) do begin
+      assign(archEmpleados,'C:\Users\Usuario\Desktop\seba\Fundamentos de Organizacion de Datos\regEmpleados');
+>>>>>>> c59eb9f08940916b2a5772197e3e9c842a747db7
       reset(archEmpleados);
       if(opcion = 1)then begin
         writeln('Nombre a buscar: ');
@@ -222,13 +249,29 @@ begin
         agregarEmpleado(archEmpleados);
       if(opcion = 5)then
         modificarEmpleado(archEmpleados);
+      if(opcion = 6)then begin
+         assign(todosEmpleados,'todos_empleados.txt');
+         rewrite(todosEmpleados);
+         exportar(archEmpleados,todosEmpleados);
+      end;
+      if(opcion = 7) then begin
+          assign(empSinDni,'faltaDNIEmpleado.txt');
+          rewrite(empSinDni);
+          exportarSinDni(archEmpleados,empSinDni);
+      end;
       close(archEmpleados);
       writeln('Desea 1: Buscar por Nombre o Apellido');
       writeln('Desea 2: Listar todos los empleados');
       writeln('Desea 3: Listar mayores de 70 años');
       writeln('Desea 4: Agregar Nuevo Empleado');
       writeln('Desea 5: Modificar Empleado');
+<<<<<<< HEAD
       writeln('Desea 6: Salir');
+=======
+      writeln('Desea 6: Exportar archivo');
+      writeln('Desea 7: Exportar empleados sin dni');
+      writeln('Desea 8: Salir');
+>>>>>>> c59eb9f08940916b2a5772197e3e9c842a747db7
       readln(opcion);
   end;
   writeln('FIN');

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="Ejer5PracticaUno.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos X="23" Y="56"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="1">
+      <Position>
+        <Filename Value="Ejer5PracticaUno.lpr"/>
+        <Caret Line="82" Column="17" TopLine="57"/>
+      </Position>
+      <Position>
+        <Filename Value="Ejer5PracticaUno.lpr"/>
+        <Caret Line="79" Column="25" TopLine="58"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>
