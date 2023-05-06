@@ -9,6 +9,7 @@ consecuencia, deberá generar un nuevo archivo en el cual, cada empleado aparezc
 NOTA: No se conoce a priori la cantidad de empleados. Además, el archivo debe ser
 recorrido una única vez.}
 program Ejer1PracticaDos;
+<<<<<<< HEAD
 const
   valorAlto = 9999;
 type
@@ -51,5 +52,36 @@ begin
   assign(comisiones,'archivo_comisiones');
   compactar(archEmp,comisiones);
   readln;
+=======
+Type
+  empleado = record
+    codEmp : integer;
+    nombre : String[12];
+    montoComi : real;
+  end;
+  arch_empleados = file of empleado;
+  // LA INFORMACION ESTA ORDENADA POR CODIGO DE EMPLEADO, UN EMPLEADO PUEDE APARECER VARIAS VECES
+  // CREAR UN ARCHIVO NUEVO CON LA INFORMACION COMPACTADA SIN REPETICION DE EMPLEADOS
+procedure compactarArchivo(var arch: arch_empleados; var archCompactado:arch_empleados);
+var
+  reg,regAux: empleado;
+  codAux:
+Begin
+  reset(arch);
+  reset(archCompactado);
+  while(not eof(arch))do begin
+    read(arch,reg);
+
+
+  end;
+end;
+var
+  arch,archCompactado:arch_empleados;
+begin
+  assign(arch,'arch_sinCompactar');
+  assign(archCompactado,'arch_compactado');
+  compactarArchivo(arch,archCompactado);
+  readln();
+>>>>>>> 776f30e9b7169a4051075a45eed03e87cdbf1247
 end.
 

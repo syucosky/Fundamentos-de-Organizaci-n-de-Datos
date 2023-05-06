@@ -6,17 +6,21 @@
     <BuildModes Active="Default"/>
     <Units>
       <Unit>
-        <Filename Value="Ejer1PracticaDos.lpr"/>
+        <Filename Value="Ejer6PracticaUno.lpr"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-<<<<<<< HEAD
-        <TopLine Value="29"/>
-        <CursorPos X="10" Y="53"/>
-=======
-        <TopLine Value="7"/>
-        <CursorPos X="5" Y="30"/>
->>>>>>> 776f30e9b7169a4051075a45eed03e87cdbf1247
+        <TopLine Value="4"/>
+        <CursorPos X="10" Y="92"/>
+        <FoldState Value=" T3J0E3 Pai00\"/>
         <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Ejer4PracticaUno.lpr"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="103"/>
+        <CursorPos X="7" Y="129"/>
+        <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit>
     </Units>
